@@ -24,6 +24,7 @@ class CreateFticketTable extends Migration
             $table->integer('number');
             $table->integer('status');
             $table->string('get_tickets_code');
+            $table->timestamp('get_time', 0)->nullable();
             $table->timestamps();
         });
     }

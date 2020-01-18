@@ -18,8 +18,8 @@ class InstrumentsSeeder extends Seeder
                 'instru_name' => $value,
                 'instru_no'   => $key,
                 'event_code'  => '20_themovements',
-                'created_at'  => time(),
-                'updated_at'  => time()
+                'created_at'  => date('Y-m-d H:i:s', time()),
+                'updated_at'  => date('Y-m-d H:i:s', time())
             ]);
         }
     }

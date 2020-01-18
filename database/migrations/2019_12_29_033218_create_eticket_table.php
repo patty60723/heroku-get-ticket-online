@@ -22,6 +22,7 @@ class CreateEticketTable extends Migration
             $table->string('phone');
             $table->integer('number');
             $table->string('code');
+            $table->integer('status');
             $table->timestamps();
         });
     }

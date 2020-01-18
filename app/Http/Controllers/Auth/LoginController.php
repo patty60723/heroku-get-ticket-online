@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Login;
 use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -52,7 +53,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
         if (Auth::check()) {
             return redirect()->to($this->redirectTo);
         }

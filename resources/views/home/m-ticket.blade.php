@@ -32,10 +32,10 @@
                             <hr/>
                             <ul>
                                 <li>
-                                    <label class="col-xs-4">親友寄票</label><span class="col-xs-8"> <span id="fTicketsNum"></span> 筆，共 <span id="fTicketsCount"></span> 張</span>
+                                    <label class="col-xs-4">親友寄票</label><span class="col-xs-8"> <span id="mTicketsNum"></span> 筆，共 <span id="mTicketsCount"></span> 張</span>
                                 </li>
                             </ul>
-                            <table class="table f-tickets table-dark">
+                            <table class="table m-tickets table-dark">
                                 <thead>
                                     <tr>
                                         <th>序號</th>
@@ -84,7 +84,7 @@ const member = {
   '13': ['許芳寧']
 };
 
-const fTicketTRTemplate = "<tr id='{code}-{index}'><td>{code}</td><td>{memberName}</td><td><input type='text' style='width: 100px;' name='ticketsName' value='{ticketsName}'></td><td><input type='text' style='width: 30px;' name='amount' value='{amount}'></td><td><input type='text' style='width: 130px;' name='contact' value='{contact}'></td><td><a class='fticketDel' href='#{code}-{index}'>刪除</a> | <a class='fticketSave' href='#{code}-{index}'>儲存</a></td></tr>";
+const mTicketTRTemplate = "<tr id='{code}-{index}'><td>{code}</td><td>{memberName}</td><td><input type='text' style='width: 100px;' name='ticketsName' value='{ticketsName}'></td><td><input type='text' style='width: 30px;' name='amount' value='{amount}'></td><td><input type='text' style='width: 130px;' name='contact' value='{contact}'></td><td><a class='mticketDel' href='#{code}-{index}'>刪除</a> | <a class='mticketSave' href='#{code}-{index}'>儲存</a></td></tr>";
 
 $(document).on("change", ".selectionChange", function(e) {
     var thisId = $(this).attr('id');
@@ -158,15 +158,15 @@ $("#mTicketQuery").on("click", function() {
             $("#mTicketResult").show();
             $("#mTicketResult table tbody").html("");
 
-            var fTicketsNum = response.num,
-                fTicketsCount = response.count,
+            var mTicketsNum = response.num,
+                mTicketsCount = response.count,
                 ticketData = response.data,
                 rowResult = '';
 
-            $("#fTicketsNum").html(fTicketsNum);
-            $("#fTicketsCount").html(fTicketsCount);
+            $("#mTicketsNum").html(mTicketsNum);
+            $("#mTicketsCount").html(mTicketsCount);
             ticketData.forEach(function(item, index, array) {
-                rowResult = fTicketTRTemplate.replace(/\{code\}/g, item.code)
+                rowResult = mTicketTRTemplate.replace(/\{code\}/g, item.code)
                                              .replace(/\{memberName\}/g, item.member)
                                              .replace(/\{contact\}/g, item.contact ? item.contact : '')
                                              .replace(/\{ticketsName\}/g, item.tickets_name)

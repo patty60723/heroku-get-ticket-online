@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ETicket extends Model
 {
-    //
+    protected $table = 'eticket';
 }

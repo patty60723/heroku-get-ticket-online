@@ -12,7 +12,11 @@
 */
 Route::get('/', 'HomeController@home')->name('index');
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
-Route::post('/home/getmTicket', 'HomeController@getmTicket')->name('getmTicket');
+Route::post('/home/geteTicketByCode', 'HomeController@geteTicketByCode')->name('geteTicketByCode');
+Route::post('/home/getfTicketByCode', 'HomeController@getfTicketByCode')->name('getfTicketByCode');
+Route::post('/home/getfTicket', 'HomeController@getfTicket')->name('getfTicket');
+Route::post('/home/geteTicket', 'HomeController@geteTicket')->name('geteTicket');
+Route::get('/home/checkoutTicket', 'HomeController@checkoutTicket')->name('checkoutTicket');
 Route::get('/home/createForm', 'HomeController@createForm');
 Route::post('/home/createForm', 'HomeController@createForm');
 
